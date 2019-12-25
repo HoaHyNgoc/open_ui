@@ -23,5 +23,22 @@ namespace MaterialDesignLearning
         {
             InitializeComponent();
         }
+
+        private void Click_order(object sender, MouseButtonEventArgs e)
+        {
+            Window srcOrder = new OrderScreen();
+            srcOrder.ShowDialog();
+        }
+
+        private void Mouse_down_left_exit(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Click_transfer(object sender, MouseButtonEventArgs e)
+        {
+            Window srcTransfer = new TransferScreen();
+            srcTransfer.ShowDialog();
+        }
     }
 }

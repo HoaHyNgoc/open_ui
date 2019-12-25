@@ -1,0 +1,308 @@
+﻿<Window x:Class="MaterialDesignLearning.OrderScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialDesignLearning"
+        mc:Ignorable="d"
+        Title="OrderScreen" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="55*"></RowDefinition>
+            <RowDefinition Height="344*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Margin="50,10,32,0" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="3">
+            <ComboBox 
+                materialDesign:HintAssist.Hint="Search"
+                IsEditable="True"
+                Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,0,3" Width="205">
+                <ComboBoxItem IsSelected="True">
+                    Pizza A
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Pizza B
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Pizza C
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Pizza D
+                </ComboBoxItem>
+            </ComboBox>
+            <materialDesign:TimePicker
+                Width="165"
+                Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                materialDesign:HintAssist.Hint="Custom hint" Margin="15,2" />
+            <CheckBox
+                Margin="10 4 16 0"
+                Style="{StaticResource MaterialDesignUserForegroundCheckBox}" Content="Sale off" RenderTransformOrigin="0.978,0.516" Width="70"/>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="50 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center"  Width="105">
+                    <materialDesign:PackIcon Kind="BasketFill" Foreground="Gray" RenderTransformOrigin="0.562,2.5" Height="20" Margin="5" Width="26" MouseDoubleClick="Click_seeMyStore" />
+                    <materialDesign:PackIcon Kind="CarElectric" Foreground="Gray" RenderTransformOrigin="0.562,2.5" Height="20" Margin="5" Width="26" />
+                    <materialDesign:PackIcon Kind="BookOpenOutline" Foreground="Gray" RenderTransformOrigin="0.562,2.5" Height="20" Margin="5" Width="26" />
+                </StackPanel>
+            </StackPanel>
+
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <ListView Margin="50, 10">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListViewItem>
+                    <materialDesign:Card Width="180">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources\pizza.png" Height="140" Width="180" Stretch="UniformToFill" />
+                            <Button Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20" Click="Click_Order">
+                                <materialDesign:PackIcon Kind="NewBox" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                                <TextBlock FontWeight="Bold" Text="Pizza" />
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+                                Shrimp, onion, red bell pepper, pineapple, olives.
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                <Button 
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30" Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                </Button>
+                                <Button
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="Heart" />
+                                </Button>
+                                <materialDesign:PopupBox
+                                Style="{StaticResource MaterialDesignToolPopupBox}"
+                                Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="More" />
+                                        <Button Content="Options" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </ListViewItem>
+                <ListViewItem>
+                    <materialDesign:Card Width="180">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources\pizza.png" Height="140" Width="180" Stretch="UniformToFill" />
+                            <Button Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                                <materialDesign:PackIcon Kind="NewBox" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                                <TextBlock FontWeight="Bold" Text="Pizza" />
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+                                Shrimp, onion, red bell pepper, pineapple, olives.
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                <Button 
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30" Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                </Button>
+                                <Button
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="Heart" />
+                                </Button>
+                                <materialDesign:PopupBox
+                                Style="{StaticResource MaterialDesignToolPopupBox}"
+                                Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="More" />
+                                        <Button Content="Options" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </ListViewItem>
+                <ListViewItem>
+                    <materialDesign:Card Width="180">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources\pizza.png" Height="140" Width="180" Stretch="UniformToFill" />
+                            <Button Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                                <materialDesign:PackIcon Kind="NewBox" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                                <TextBlock FontWeight="Bold" Text="Pizza" />
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+                                Shrimp, onion, red bell pepper, pineapple, olives.
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                <Button 
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30" Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                </Button>
+                                <Button
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="Heart" />
+                                </Button>
+                                <materialDesign:PopupBox
+                                Style="{StaticResource MaterialDesignToolPopupBox}"
+                                Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="More" />
+                                        <Button Content="Options" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </ListViewItem>
+                <ListViewItem>
+                    <materialDesign:Card Width="180">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources\pizza.png" Height="140" Width="180" Stretch="UniformToFill" />
+                            <Button Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                                <materialDesign:PackIcon Kind="NewBox" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                                <TextBlock FontWeight="Bold" Text="Pizza" />
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+                                Shrimp, onion, red bell pepper, pineapple, olives.
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                <Button 
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30" Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                </Button>
+                                <Button
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="Heart" />
+                                </Button>
+                                <materialDesign:PopupBox
+                                Style="{StaticResource MaterialDesignToolPopupBox}"
+                                Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="More" />
+                                        <Button Content="Options" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </ListViewItem>
+                <ListViewItem>
+                    <materialDesign:Card Width="180">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources\pizza.png" Height="140" Width="180" Stretch="UniformToFill" />
+                            <Button Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                                <materialDesign:PackIcon Kind="NewBox" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8 24 8 0">
+                                <TextBlock FontWeight="Bold" Text="Pizza" />
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center">
+                                Shrimp, onion, red bell pepper, pineapple, olives.
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                                <Button 
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30" Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="ShareVariant" />
+                                </Button>
+                                <Button
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon Kind="Heart" />
+                                </Button>
+                                <materialDesign:PopupBox
+                                Style="{StaticResource MaterialDesignToolPopupBox}"
+                                Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="More" />
+                                        <Button Content="Options" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </ListViewItem>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

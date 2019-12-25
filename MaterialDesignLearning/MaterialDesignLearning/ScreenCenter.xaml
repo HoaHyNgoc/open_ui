@@ -33,7 +33,7 @@
                         <materialDesign:PackIcon Kind="Settings" />
                     </Button>
                     <Button Height="30" Width="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="PowerSettings" />
+                        <materialDesign:PackIcon Kind="PowerSettings" MouseLeftButtonDown="Mouse_down_left_exit" />
                     </Button>
                 </StackPanel>
             </Grid>
@@ -189,13 +189,13 @@
                         <TextBlock Text="Center" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="50">
+                <ListViewItem Height="50" MouseDoubleClick="Click_order">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Food" Width="30" Height="30" VerticalAlignment="Center"/>
                         <TextBlock Text="Order" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="50">
+                <ListViewItem Height="50" MouseDoubleClick="Click_transfer">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="TruckDelivery" Width="30" Height="30" VerticalAlignment="Center"/>
                         <TextBlock Text="Transfer" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>

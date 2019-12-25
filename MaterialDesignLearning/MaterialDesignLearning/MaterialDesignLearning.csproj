@@ -63,9 +63,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomDialog.xaml.cs">
+      <DependentUpon>CustomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderScreen.xaml.cs">
+      <DependentUpon>OrderScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScreenCenter.xaml.cs">
       <DependentUpon>ScreenCenter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StoreScreen.xaml.cs">
+      <DependentUpon>StoreScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferScreen.xaml.cs">
+      <DependentUpon>TransferScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,7 +94,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrderScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ScreenCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StoreScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransferScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,7 +138,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\map.PNG" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\pizza.png" />
   </ItemGroup>
