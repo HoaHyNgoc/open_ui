@@ -26,7 +26,7 @@ namespace MaterialDesignLearning
 
         private void Click_order(object sender, MouseButtonEventArgs e)
         {
-            Window srcOrder = new OrderScreen();
+            Window srcOrder = new ScreenOrder();
             srcOrder.ShowDialog();
         }
 
@@ -39,6 +39,17 @@ namespace MaterialDesignLearning
         {
             Window srcTransfer = new TransferScreen();
             srcTransfer.ShowDialog();
+        }
+
+        private void Click_setting(object sender, MouseButtonEventArgs e)
+        {
+            Window srcSetting = new SettingScreen();
+            srcSetting.ShowDialog();
+        }
+
+        private void toExitApplication(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

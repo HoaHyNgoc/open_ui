@@ -28,7 +28,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ListView Grid.Column="0">
+            <ListView Grid.Column="0" Margin="40,0,0,0" >
                 <ListViewItem>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <CheckBox

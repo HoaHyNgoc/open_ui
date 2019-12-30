@@ -24,59 +24,61 @@
                 Margin="0"
                 UseLayoutRounding="True"
                 SnapsToDevicePixels="True">
-                <Grid>
+                <Grid Margin="20">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="52*"></RowDefinition>
-                        <RowDefinition Height="52*"></RowDefinition>
-                        <RowDefinition Height="63*"></RowDefinition>
-                        <RowDefinition Height="80*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Margin="0,14" Width="285">
-                        <materialDesign:PackIcon Kind="TelephoneInTalk" Foreground="Gray" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.688,0.75"/>
-                        <TextBox
-                            x:Name="CommentTextBox"
-                            Margin="15 0 0 0"
-                            materialDesign:HintAssist.Hint="Phone number" Width="239" />
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="104" Margin="0,6" Grid.Row="1" >
-                        <materialDesign:PackIcon Kind="Number6Box" Foreground="Gray" VerticalAlignment="Center"/>
-                        <ComboBox
-                              materialDesign:HintAssist.Hint="Number"
-                              materialDesign:HintAssist.FloatingScale="1.5"
-                              materialDesign:HintAssist.FloatingOffset="0, -24"
-                              MinWidth="72"
-                              Margin="15 0 0 0"
-                              ItemsSource="{Binding LongListToTestComboVirtualization}"
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="69">
-                            <ComboBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <VirtualizingStackPanel />
-                                </ItemsPanelTemplate>
-                            </ComboBox.ItemsPanel>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="206" Margin="0,10,0,13" Grid.Row="2" >
-                        <materialDesign:PackIcon Kind="AddLocation" Foreground="Gray" VerticalAlignment="Center"/>
-                        <ComboBox 
-                            materialDesign:HintAssist.Hint="Search"
-                            IsEditable="True"
-                            Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="15,2,0,1" Width="170" Height="37">
-                            <ComboBoxItem IsSelected="True">
-                                Quan 1 .TPHCM
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                Quan 2 .TPHCM
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                Quan 3 .TPHCM
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                Quan 4 .TPHCM
-                            </ComboBoxItem>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Height="68" Margin="0,5,0,7" Width="257">
+                    <materialDesign:Card Grid.Row="0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="AddLocation" Margin="15 10" Foreground="Gray" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.688,0.75"/>
+                                <ComboBox
+                                    Width="155"
+                                    Margin="10 10"
+                                    materialDesign:HintAssist.Hint="Choose table"
+                                    IsEditable="True"
+                                    materialDesign:HintAssist.HintOpacity=".26">
+                                    <ComboBoxItem>
+                                        T001
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        T002
+                                    </ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Number6Box" Margin="15 10" Foreground="Gray" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.688,0.75"/>
+                                <ComboBox
+                                    Width="155"
+                                    Margin="10 10"
+                                    materialDesign:HintAssist.Hint="Choose number"
+                                    IsEditable="True"
+                                    materialDesign:HintAssist.HintOpacity=".26">
+                                    <ComboBoxItem>
+                                        1 Item
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        2 Items
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        3 Items
+                                    </ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <CheckBox
+                                    Margin="60 10 10 10"
+                                    Style="{StaticResource MaterialDesignCheckBox}">
+                                </CheckBox>
+                                <TextBox
+                                    Margin="10 10"
+                                    x:Name="CommentTextBox"
+                                    materialDesign:HintAssist.Hint="Discount code" Width="208" />
+                            </StackPanel>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Height="68" Margin="0,5,0,7" Width="257">
                         <Grid Width="120">
                             <Button
                             Style="{StaticResource MaterialDesignRaisedButton}"

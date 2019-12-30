@@ -1,0 +1,493 @@
+﻿<Window x:Class="MaterialDesignLearning.ScreenEditPizza"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialDesignLearning"
+        mc:Ignorable="d"
+        Title="ScreenEditPizza" Height="450" Width="800"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Grid.Column="0" Margin="10">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock TextAlignment="Center" Text="Search content" Margin="25" FontSize="20"></TextBlock>
+                <TextBox
+                Width="250px"
+                materialDesign:HintAssist.Hint="Pizza's name"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <ComboBox
+                Width="250px"
+                Margin="0 10"
+                materialDesign:HintAssist.Hint="Pizza's type"
+                IsEditable="True"
+                materialDesign:HintAssist.HintOpacity=".26">
+                    <ComboBoxItem>
+                        Pizza's type 1
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Pizza's type 2
+                    </ComboBoxItem>
+                </ComboBox>
+                <StackPanel Orientation="Horizontal" Margin="80 0">
+                    <ToggleButton
+                HorizontalAlignment="Left"
+                Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                ToolTip="Sale off"/>
+                    <TextBlock Margin="10" Text="Sale off"></TextBlock>
+                </StackPanel>
+                <Button
+                Margin="25 0"
+                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                HorizontalAlignment="Right"
+                ToolTip="Search...">
+                    <materialDesign:PackIcon
+                    Kind="TableSearch"
+                    Height="24"
+                    Width="24" />
+                </Button>
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Column="1" Margin="10">
+            <ListView>
+                <ListViewItem Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Name: Pizza Alasca" Margin="10"></TextBlock>
+                            <TextBlock Text="Price: 200$" Margin="10" Foreground="Green"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:Card>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="268"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto" MinWidth="66"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
+                                    <Image  Source="Resources\pizza.png" Height="150" Width="320" Stretch="UniformToFill" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <materialDesign:PopupBox
+                                    Margin="16,0,16,0"
+                                    StaysOpen="True"
+                                    IsEnabled="{Binding IsChecked, ElementName=PopupEnabled}">
+                                        <Grid
+                                        Width="300"
+                                        Margin="8,8,8,8">
+                                            <Grid.Resources>
+                                                <Style
+                                                TargetType="CheckBox"
+                                                BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                    <Setter Property="Margin" Value="8,8,10,8" />
+                                                </Style>
+                                                <Style
+                                                TargetType="TextBox"
+                                                BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                    <Setter
+                                                    Property="materialDesign:HintAssist.IsFloating"
+                                                    Value="True" />
+                                                    <Setter
+                                                    Property="Margin"
+                                                    Value="8,8,8,8" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Margin="8,8,8,16">
+                                            OPTIONS
+                                            </TextBlock>
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            materialDesign:HintAssist.Hint="Name's pizza"
+                                            Text="200" />
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="2"
+                                            materialDesign:HintAssist.Hint="Price' pizza"
+                                            Text="400" />
+                                            <ListView
+                                            Width="250px"
+                                            Grid.Column="0"
+                                            Grid.Row="3"
+                                            Margin="0 10">
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 1">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 2">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 3">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 4">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                            </ListView>
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="2"
+                                            IsChecked="True"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="3"
+                                            VerticalAlignment="Bottom" />
+                                            <StackPanel
+                                            Grid.Row="5"
+                                            Grid.ColumnSpan="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+                                                <Button
+                                                  Content="_Save"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" />
+                                                <Button
+                                                  Content="_Cancel"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}">
+                                                    <Button.Style>
+                                                        <Style
+                                                        TargetType="Button"
+                                                        BasedOn="{StaticResource MaterialDesignPopupBoxButton}">
+                                                            <Setter
+                                                        Property="Foreground"
+                                                        Value="Red" />
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </StackPanel>
+                                        </Grid>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Name: Pizza Alasca" Margin="10"></TextBlock>
+                            <TextBlock Text="Price: 200$" Margin="10" Foreground="Green"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:Card>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="268"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto" MinWidth="66"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
+                                    <Image  Source="Resources\pizza.png" Height="150" Width="320" Stretch="UniformToFill" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <materialDesign:PopupBox
+                                    Margin="16,0,16,0"
+                                    StaysOpen="True"
+                                    IsEnabled="{Binding IsChecked, ElementName=PopupEnabled}">
+                                        <Grid
+                                        Width="300"
+                                        Margin="8,8,8,8">
+                                            <Grid.Resources>
+                                                <Style
+                                                TargetType="CheckBox"
+                                                BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                    <Setter Property="Margin" Value="8,8,10,8" />
+                                                </Style>
+                                                <Style
+                                                TargetType="TextBox"
+                                                BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                    <Setter
+                                                    Property="materialDesign:HintAssist.IsFloating"
+                                                    Value="True" />
+                                                    <Setter
+                                                    Property="Margin"
+                                                    Value="8,8,8,8" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Margin="8,8,8,16">
+                                            OPTIONS
+                                            </TextBlock>
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            materialDesign:HintAssist.Hint="Name's pizza"
+                                            Text="200" />
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="2"
+                                            materialDesign:HintAssist.Hint="Price' pizza"
+                                            Text="400" />
+                                            <ListView
+                                            Width="250px"
+                                            Grid.Column="0"
+                                            Grid.Row="3"
+                                            Margin="0 10">
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 1">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 2">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 3">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 4">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                            </ListView>
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="2"
+                                            IsChecked="True"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="3"
+                                            VerticalAlignment="Bottom" />
+                                            <StackPanel
+                                            Grid.Row="5"
+                                            Grid.ColumnSpan="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+                                                <Button
+                                                  Content="_Save"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" />
+                                                <Button
+                                                  Content="_Cancel"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}">
+                                                    <Button.Style>
+                                                        <Style
+                                                        TargetType="Button"
+                                                        BasedOn="{StaticResource MaterialDesignPopupBoxButton}">
+                                                            <Setter
+                                                        Property="Foreground"
+                                                        Value="Red" />
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </StackPanel>
+                                        </Grid>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Name: Pizza Alasca" Margin="10"></TextBlock>
+                            <TextBlock Text="Price: 200$" Margin="10" Foreground="Green"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:Card>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="268"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto" MinWidth="66"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
+                                    <Image  Source="Resources\pizza.png" Height="150" Width="320" Stretch="UniformToFill" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <materialDesign:PopupBox
+                                    Margin="16,0,16,0"
+                                    StaysOpen="True"
+                                    IsEnabled="{Binding IsChecked, ElementName=PopupEnabled}">
+                                        <Grid
+                                        Width="300"
+                                        Margin="8,8,8,8">
+                                            <Grid.Resources>
+                                                <Style
+                                                TargetType="CheckBox"
+                                                BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                    <Setter Property="Margin" Value="8,8,10,8" />
+                                                </Style>
+                                                <Style
+                                                TargetType="TextBox"
+                                                BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                    <Setter
+                                                    Property="materialDesign:HintAssist.IsFloating"
+                                                    Value="True" />
+                                                    <Setter
+                                                    Property="Margin"
+                                                    Value="8,8,8,8" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Margin="8,8,8,16">
+                                            OPTIONS
+                                            </TextBlock>
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            materialDesign:HintAssist.Hint="Name's pizza"
+                                            Text="200" />
+                                            <TextBox
+                                            Grid.Column="0"
+                                            Grid.Row="2"
+                                            materialDesign:HintAssist.Hint="Price' pizza"
+                                            Text="400" />
+                                            <ListView
+                                            Width="250px"
+                                            Grid.Column="0"
+                                            Grid.Row="3"
+                                            Margin="0 10">
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 1">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 2">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 3">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                                <ListViewItem>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox
+                                                        Style="{StaticResource MaterialDesignCheckBox}" Content="Ingredient 4">
+                                                        </CheckBox>
+                                                    </StackPanel>
+                                                </ListViewItem>
+                                            </ListView>
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="2"
+                                            IsChecked="True"
+                                            VerticalAlignment="Bottom" />
+                                            <CheckBox
+                                            Grid.Column="1"
+                                            Grid.Row="3"
+                                            VerticalAlignment="Bottom" />
+                                            <StackPanel
+                                            Grid.Row="5"
+                                            Grid.ColumnSpan="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+                                                <Button
+                                                  Content="_Save"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" />
+                                                <Button
+                                                  Content="_Cancel"
+                                                  Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}">
+                                                    <Button.Style>
+                                                        <Style
+                                                        TargetType="Button"
+                                                        BasedOn="{StaticResource MaterialDesignPopupBoxButton}">
+                                                            <Setter
+                                                        Property="Foreground"
+                                                        Value="Red" />
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </StackPanel>
+                                        </Grid>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </materialDesign:Card>
+    </Grid>
+</Window>

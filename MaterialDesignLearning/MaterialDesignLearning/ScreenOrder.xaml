@@ -1,0 +1,369 @@
+﻿<Window x:Class="MaterialDesignLearning.ScreenOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialDesignLearning"
+        mc:Ignorable="d"
+        Title="ScreenOrder" Height="450" Width="600"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid HorizontalAlignment="Center">
+        <materialDesign:Card>
+            <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" Height="350" Width="520">
+                <TabItem Header="Area A">
+                    <WrapPanel>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardTextOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    IsEnabled="False"
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" Click="getOrder" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA3" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA4" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA6" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </WrapPanel>
+                </TabItem>
+                <TabItem Header="Area A">
+                    <WrapPanel>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                            Margin="10"
+                            Height="80"
+                            Width="150"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                <Button
+                                  Margin="5"
+                                  Width="30"
+                                  Height="30"
+                                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                  ToolTip="MaterialDesignFloatingActionMiniAccentButton">
+                                    <materialDesign:PackIcon Kind="ClipboardCheckOutline" Height="20" Width="20" />
+                                </Button>
+                                <TextBlock Foreground="Gray" Margin="10" Text="TBA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PopupBox
+                                    HorizontalAlignment="Right"
+                                    Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                    Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Order" />
+                                        <Button Content="Hold" />
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </WrapPanel>
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
+    </Grid>
+</Window>

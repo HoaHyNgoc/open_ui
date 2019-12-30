@@ -26,15 +26,29 @@
                                Margin="0 0 10 0"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Height="30" Width="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Account" />
-                    </Button>
-                    <Button Height="30" Width="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Settings" />
-                    </Button>
-                    <Button Height="30" Width="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="PowerSettings" MouseLeftButtonDown="Mouse_down_left_exit" />
-                    </Button>
+                    <materialDesign:PopupBox 
+                        Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
+                        PlacementMode="BottomAndAlignCentres"
+                        ToolTipService.Placement="Right"
+                        ToolTip="PopupBox, Style MaterialDesignMultiFloatingActionPopupBox"
+                        Width="50"
+                        Height="50">
+                        <StackPanel>
+                            <Button
+                                ToolTip="You want to exit application?"
+                                Opacity="0.5"
+                                Content="Exit" Click="toExitApplication">
+                            </Button>
+                            <Button
+                                ToolTip="Account user">
+                                <materialDesign:PackIcon Kind="Account" />
+                            </Button>
+                            <Button
+                                ToolTip="Custom setting">
+                                <materialDesign:PackIcon Kind="Settings" />
+                            </Button>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
                 </StackPanel>
             </Grid>
         </StackPanel>
@@ -197,20 +211,14 @@
                 </ListViewItem>
                 <ListViewItem Height="50" MouseDoubleClick="Click_transfer">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="TruckDelivery" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <materialDesign:PackIcon Kind="MapMarkerRadius" Width="30" Height="30" VerticalAlignment="Center"/>
                         <TextBlock Text="Transfer" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="50">
+                <ListViewItem Height="50" MouseDoubleClick="Click_setting">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="MapMarkerRadius" Width="30" Height="30" VerticalAlignment="Center"/>
-                        <TextBlock Text="Map" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Settings" Width="30" Height="30" VerticalAlignment="Center"/>
-                        <TextBlock Text="Settings" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
+                        <materialDesign:PackIcon Kind="Codepen" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Manage" VerticalAlignment="Center" FontSize="16" Margin="20 0"></TextBlock>
                     </StackPanel>
                 </ListViewItem>
             </ListView>

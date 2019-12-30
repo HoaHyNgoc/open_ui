@@ -35,5 +35,11 @@ namespace MaterialDesignLearning
             Window srcStore = new StoreScreen();
             srcStore.ShowDialog();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window srcListOrder = new ScreenOrderList();
+            srcListOrder.ShowDialog();
+        }
     }
 }

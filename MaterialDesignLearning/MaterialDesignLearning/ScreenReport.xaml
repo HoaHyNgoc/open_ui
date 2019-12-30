@@ -1,0 +1,79 @@
+﻿<Window x:Class="MaterialDesignLearning.ScreenReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialDesignLearning"
+        mc:Ignorable="d"
+        Title="ScreenReport" Height="450" Width="800"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Grid.Row="0" Margin="15 5">
+            <StackPanel Orientation="Horizontal">
+                <DatePicker
+                    Width="200px"
+                    Margin="15"
+                    materialDesign:HintAssist.Hint="Pick Date"
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                <ComboBox
+                Width="250px"
+                Margin="15,20,15,15"
+                materialDesign:HintAssist.Hint="Product type"
+                IsEditable="True"
+                materialDesign:HintAssist.HintOpacity=".26" Height="35">
+                    <ComboBoxItem>
+                        Employee 1
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Employee 2
+                    </ComboBoxItem>
+                </ComboBox>
+                <RepeatButton
+                    Width="150"
+                    Margin="15"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Content="CREATE REPORT">
+                </RepeatButton>
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="1" Margin="15 0">
+            <ListView Margin="10" Name="lvUsers">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Product" Width="120" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="ID Bill" Width="80" DisplayMemberBinding="{Binding IdBill}" />
+                        <GridViewColumn Header="Date" Width="250" DisplayMemberBinding="{Binding Date}" />
+                        <GridViewColumn Header="Price" Width="250" DisplayMemberBinding="{Binding Price}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="2" Margin="15 5">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="15 5" Text="Best - selling product: ....." FontSize="16" Foreground="Red" FontWeight="Bold"></TextBlock>
+                <TextBlock Margin="15 5" Text="Total money: ....." FontSize="16" Foreground="Red" FontWeight="Bold"></TextBlock>
+            </StackPanel>
+        </materialDesign:Card>
+        <RepeatButton
+                Grid.Row="3"
+                Width="200"
+                Margin="5"
+                Content="EXPORT FILE"
+                ToolTip="Resource name: MaterialDesignRaisedButton">
+        </RepeatButton>
+    </Grid>
+</Window>
